@@ -4,13 +4,15 @@ const path = require('path');
 
 module.exports = {
 	mode:"production",
-	entry: {
-		api: "./vue/src/js/api.js",
-		login:"./vue/src/js/login.js",
-	},
+	entry: "./src/js/api.js",
+	
+
+		/*{api: "./vue/src/js/api.js",
+		login:"./vue/src/js/login.js",},*/
+
 	output:{
 	  	/*path:path.resolve(__dirname,"dist"),*/
-	  	path:path.resolve(__dirname,"/app/html"),
+	  	path:path.resolve(__dirname,"app/html"),
 	  	filename:"js/[name].js",
 	},
 	plugins:[
@@ -50,7 +52,7 @@ module.exports = {
 	          'style-loader',
 	          'css-loader'
 	        ],
-	        exclude: '/node_modules/'
+	        exclude:['/node_modules/','/vue/'] 
 	      },
 	       
       {
