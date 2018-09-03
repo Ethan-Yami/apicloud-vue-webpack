@@ -105,12 +105,11 @@
       handleSign(formName){
         this.$refs[formName].validate((valid) => {
           if (valid) {
-              console.log('23323 submit!!'); 
+     
                         
-              this.ajax('/api/user/sigin','post',this.accountForm,'');             
-            
-              /*api.ajax({
-                url: 'http://192.168.126.139/',
+                 
+             api.ajax({
+                url: this.config.url+'/api/user/sigin',
                 method: 'post',
                 data: {
                   values:this.accountForm,
@@ -121,7 +120,7 @@
                   } else {
                       api.alert({ msg: JSON.stringify(err) });
                   }
-              });*/
+              });
 
 
           } else {            
@@ -129,7 +128,7 @@
             return false;
           }
         });
-        //alert(JSON.stringify(this.accountForm));
+        
       }
     }
   }
