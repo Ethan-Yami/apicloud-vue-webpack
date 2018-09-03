@@ -6,7 +6,7 @@ module.exports = {
 	mode:"production",
 	entry: {
 		api: "./vue/src/js/api.js",
-		login:"./vue/src/js/login.js",
+		login:"./vue/src/main.js",
 	},
 	output:{
 	  	/*path:path.resolve(__dirname,"dist"),*/
@@ -16,7 +16,7 @@ module.exports = {
 	plugins:[
 		new HtmlWebpackPlugin({
 			title:"Login System",
-			filename:"index.html",
+			filename:"main.html",
 			template:"index.html"			
 		}),
 		new HtmlWebpackPlugin({
@@ -57,8 +57,7 @@ module.exports = {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|jpg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
-         
+          limit: 10000,         
         }
       },
       {

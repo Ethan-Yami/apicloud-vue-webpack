@@ -105,7 +105,13 @@
       handleSign(formName){
         this.$refs[formName].validate((valid) => {
           if (valid) {
-     
+              api.showProgress({
+                style: 'default',
+                animationType: 'fade',
+                title: '请稍等...',
+                text: '正在登录...',
+                modal: false
+              });
                         
                  
              api.ajax({
@@ -116,9 +122,9 @@
                 }
               },function(ret, err) {
                   if (ret) {
-                      api.alert({ msg: JSON.stringify(ret) });
-                  } else {
-                      api.alert({ msg: JSON.stringify(err) });
+                    api.alert({ msg: JSON.stringify(ret) });
+                  }else {
+                    api.alert({ msg: JSON.stringify(err) });
                   }
               });
 
