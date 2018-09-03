@@ -63,11 +63,13 @@
   }
 
 </style>
+ 
 <script>
 
   export default {
-
+  
     data() {
+     
       var checkAge = (rule, value, callback) => {
         if (!value) {
           return callback(new Error('账号不能为空'));
@@ -103,10 +105,12 @@
       handleSign(formName){
         this.$refs[formName].validate((valid) => {
           if (valid) {
-              console.log('23323 submit!!');              
+              console.log('23323 submit!!'); 
+                        
+              this.ajax('/api/user/sigin','post',this.accountForm,'');             
             
-              api.ajax({
-                url: 'http://192.168.1.82/api/index',
+              /*api.ajax({
+                url: 'http://192.168.126.139/',
                 method: 'post',
                 data: {
                   values:this.accountForm,
@@ -117,7 +121,7 @@
                   } else {
                       api.alert({ msg: JSON.stringify(err) });
                   }
-              });
+              });*/
 
 
           } else {            
