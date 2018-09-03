@@ -92,6 +92,7 @@
     },
     methods:{
       handleSign(formName){
+        this.getUser();
         api.alert({ msg: JSON.stringify(this.config) });
         console.log(this.config.user);        
         console.log(JSON.stringify(this.config.user));      
