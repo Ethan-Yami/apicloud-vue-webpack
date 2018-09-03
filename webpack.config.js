@@ -4,9 +4,10 @@ const path = require('path');
 
 module.exports = {
 	mode:"production",
-	entry: {
-		api: "./vue/src/js/api.js",
-		login:"./vue/src/main.js",
+	entry: {		
+		api:"./vue/src/js/api.js",
+		login:"./vue/src/Login.js",
+		index:"./vue/src/Index.js",
 	},
 	output:{
 	  	/*path:path.resolve(__dirname,"dist"),*/
@@ -16,13 +17,15 @@ module.exports = {
 	plugins:[
 		new HtmlWebpackPlugin({
 			title:"Login System",
-			filename:"main.html",
-			template:"index.html"			
+			filename:"index.html",
+			template:"index.html",
+			chunks:['index','api']	
 		}),
 		new HtmlWebpackPlugin({
 			title:"Login System",
 			filename:"login.html",
-			template:"index.html"
+			template:"index.html",
+			chunks:['login','api']
 			
 		}),
 		new VueLoaderPlugin()

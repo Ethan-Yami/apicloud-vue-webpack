@@ -105,6 +105,13 @@
       handleSign(formName){
         this.$refs[formName].validate((valid) => {
           if (valid) {
+
+              this.getUser();
+
+              console.log(this.config.user);
+
+    
+
               api.showProgress({
                 style: 'default',
                 animationType: 'fade',
@@ -112,7 +119,9 @@
                 text: '正在登录...',
                 modal: false
               });
-                        
+            
+
+            var _this = this;         
                  
              api.ajax({
                 url: this.config.url+'/api/user/sigin',
@@ -121,8 +130,27 @@
                   values:this.accountForm,
                 }
               },function(ret, err) {
+                  api.hideProgress();
+
                   if (ret) {
-                    api.alert({ msg: JSON.stringify(ret) });
+
+                    if(ret.status==200){
+                       api.alert({ msg: JSON.stringify(ret) });
+             
+                      _this.saveUser(ret.data);
+                      _this.config.user.id = ret.data.id;
+                      _this.config.user.username = ret.data.username;
+                      window.location.href = "./index.html";
+                      /*api.alert({ msg: JSON.stringify( _this.config) });*/
+                    }else{
+                      api.toast({
+                        msg: ret.message,
+                        duration: 2000,
+                        location: 'middle'
+                      });
+                 
+                    }
+                    
                   }else {
                     api.alert({ msg: JSON.stringify(err) });
                   }
