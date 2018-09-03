@@ -4,12 +4,10 @@ const path = require('path');
 
 module.exports = {
 	mode:"production",
-	entry: "./src/js/api.js",
-	
-
-		/*{api: "./vue/src/js/api.js",
-		login:"./vue/src/js/login.js",},*/
-
+	entry: {
+		api: "./vue/src/js/api.js",
+		login:"./vue/src/js/login.js",
+	},
 	output:{
 	  	/*path:path.resolve(__dirname,"dist"),*/
 	  	path:path.resolve(__dirname,"app/html"),
