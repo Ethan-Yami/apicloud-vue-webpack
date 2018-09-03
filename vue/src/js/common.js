@@ -8,7 +8,7 @@ exports.install = function (Vue, options) {
     };
 
     Vue.prototype.checkUser = function(){
-
+    		
 
     };
 
@@ -29,9 +29,12 @@ exports.install = function (Vue, options) {
     Vue.prototype.getUser = function(){
    		var key = 'user';
 		user = $api.getStorage(key);
-		this.config.user.id = user.id;
-		this.config.user.username = user.username;
-		this.config.user.salt = user.salt;
+		if(false!=user){
+			this.config.user.id = user.id;
+			this.config.user.username = user.username;
+			this.config.user.salt = user.salt;
+		}
+		
 		
 
     };
