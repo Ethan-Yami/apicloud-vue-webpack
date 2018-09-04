@@ -1,103 +1,136 @@
 <template>
-  <div id="out">
+  
 
-    <div class="middle">
-       
-       <div id="inner">
-          
-          <el-form :model="accountForm" status-icon :rules="rules" ref="accountForm" label-width="40px" style="padding-top: 66px;">
- 
-         
-          
-          <el-form-item style="text-align: center;">
-            <el-button type="primary" @click="handleSign('accountForm')">Display Data</el-button>
-          </el-form-item>
-        </el-form>
+    <el-container>
+      <el-header style='text-align: center;'>
+        
+        <el-menu
+          :default-active="activeIndex2"
+          class="el-menu-demo"
+          mode="horizontal"
+          @select="handleSelect"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b">
+          <el-menu-item index="1">处理中心</el-menu-item>
+          <el-submenu index="2">
+            <template slot="title">我的工作台</template>
+            <el-menu-item index="2-1">选项1</el-menu-item>
+            <el-menu-item index="2-2">选项2</el-menu-item>
+            <el-menu-item index="2-3">选项3</el-menu-item>
+            <el-submenu index="2-4">
+              <template slot="title">选项4</template>
+              <el-menu-item index="2-4-1">选项1</el-menu-item>
+              <el-menu-item index="2-4-2">选项2</el-menu-item>
+              <el-menu-item index="2-4-3">选项3</el-menu-item>
+            </el-submenu>
+          </el-submenu>
+          <el-menu-item index="3" disabled>消息中心</el-menu-item>
+          <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+        </el-menu>
+
+
     
 
-        </div>
-    </div>
-   
+      </el-header>
+      <el-container>
+        <el-aside class='el-menu-side' style="width: auto;">
+         
+              <el-menu style="margin-top: 40px;" default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
 
-  </div>
+                <el-menu-item index="8" @click="handleSide">
+                  <i class="el-icon-menu"></i>
+                  <span>收起菜单</span>                 
+                </el-menu-item>
+                <el-submenu index="1">
+                  <template slot="title">
+                    <i class="el-icon-location"></i>
+                    <span slot="title">导航一</span>
+                  </template>
+                  <el-menu-item-group>
+                    <span slot="title">分组一</span>
+                    <el-menu-item index="1-1">选项1</el-menu-item>
+                    <el-menu-item index="1-2">选项2</el-menu-item>
+                  </el-menu-item-group>
+                  <el-menu-item-group title="分组2">
+                    <el-menu-item index="1-3">选项3</el-menu-item>
+                  </el-menu-item-group>
+                  <el-submenu index="1-4">
+                    <span slot="title">选项4</span>
+                    <el-menu-item index="1-4-1">选项1</el-menu-item>
+                  </el-submenu>
+                </el-submenu>
+                <el-menu-item index="2">
+                  <i class="el-icon-menu"></i>
+                  <span slot="title">导航二</span>
+                </el-menu-item>
+                <el-menu-item index="3" disabled>
+                  <i class="el-icon-document"></i>
+                  <span slot="title">导航三</span>
+                </el-menu-item>
+                <el-menu-item index="4">
+                  <i class="el-icon-setting"></i>
+                  <span slot="title">导航四</span>
+                </el-menu-item>
+            </el-menu>
+
+
+
+        </el-aside>
+        <el-main>Main</el-main>
+      </el-container>
+    </el-container>
+
+
 </template>
 <style>
-  #out{width:100%;height:100%;background-image:url('./images/4.jpg'); 
-    background-repeat:no-repeat; background-size:100% 100%;
-    display: table;
-    position: absolute;
+
+  
+  .el-container {
     height: 100%;
-    width: 100%;}
-  .middle {
-    display: table-cell;
-    vertical-align: middle;
+    padding: 0;margin:0;
   }
-  #inner{
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    max-width: 440px;
-    width: calc(100% - 40px);
-    padding: 44px;
-    margin-bottom: 28px;
-    background-color: #fff;
-    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.55);
-    -moz-box-shadow: 0 2px 3px rgba(0,0,0,.55);
-    box-shadow: 0 2px 3px rgba(0,0,0,.55);
-    border: 1px solid #818c94;
-    border: 1px solid rgba(0,0,0,.4);
-    min-width: 320px;
-    min-height: 338px;
-   
+  .el-header {
+     padding: 0px; 
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
   }
+  .el-menu-top{text-align: center;text-align: center;}
+  .el-menu-vertical-demo:not(.el-menu--collapse){width:200px;height: 99%;
+    min-height: 400px;}
 
 </style>
- 
-<script>
 
+<script>
   export default {
-  
     data() {
-     
-      var checkAge = (rule, value, callback) => {
-        if (!value) {
-          return callback(new Error('账号不能为空'));
-        }else{
-          callback();
-        }       
+      const item = {
+        date: '2016-05-02',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
       };
-      var validatePass = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('请输入密码'));
-        } else {
-        
-          callback();
-        }
-      };     
-     return {
-      accountForm: {
-        account: '',
-        password: '',
-        permission:"root"
-      },
-      rules: {
-        password: [
-          { validator: validatePass, trigger: 'blur' }
-        ],      
-        account: [
-          { validator: checkAge, trigger: 'blur' }
-        ]
+      return {
+        tableData: Array(20).fill(item),
+        isCollapse: true,
+        activeIndex: '1',
+        activeIndex2: '1'
       }
-    };
     },
-    methods:{
-      handleSign(formName){
-        this.getUser();
-        api.alert({ msg: JSON.stringify(this.config) });
-        console.log(this.config.user);        
-        console.log(JSON.stringify(this.config.user));      
-        api.alert({ msg: JSON.stringify(this.config) });  
+    methods: {
+      handleSide(){
+        this.isCollapse = !this.isCollapse;
+      },
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      },
+       handleSelect(key, keyPath) {
+        console.log(key, keyPath);
       }
     }
-  }
+  };
 </script>
