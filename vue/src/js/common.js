@@ -29,14 +29,17 @@ exports.install = function (Vue, options) {
     Vue.prototype.getUser = function(){
    		var key = 'user';
 		user = $api.getStorage(key);
-		if(false!=user){
+		console.log(user);
+		if(undefined!=user && false!=user ){
 			this.config.user.id = user.id;
 			this.config.user.username = user.username;
 			this.config.user.salt = user.salt;
 		}
-		
-		
+    };
 
+    Vue.prototype.delUser = function(){
+   		var key = 'user';
+		$api.rmStorage('user');		
     };
     
 };

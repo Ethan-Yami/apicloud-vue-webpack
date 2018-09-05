@@ -110,8 +110,6 @@
 
               console.log(this.config.user);
 
-    
-
               api.showProgress({
                 style: 'default',
                 animationType: 'fade',
@@ -169,7 +167,8 @@
       this.getUser();
       let config = this.config;
       console.log(JSON.stringify(config));
-      if(config.user.id && config.user.username && config.user.salt){       
+      console.log(JSON.stringify(config.user));
+      if(JSON.stringify(config.user)!='{}' && config.user.id && config.user.username && config.user.salt){       
         window.location.href = "./index.html";
       }
       //api.alert({ msg: JSON.stringify(user) });

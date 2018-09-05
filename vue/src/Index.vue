@@ -29,7 +29,30 @@
               </el-menu>
 
           </div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+          <el-col :span="4">
+
+            <!-- <el-dropdown>
+              <el-button type="primary">
+                更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
+              </el-button>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>黄金糕</el-dropdown-item>
+                <el-dropdown-item>狮子头</el-dropdown-item>
+                <el-dropdown-item>螺蛳粉</el-dropdown-item>
+                <el-dropdown-item>双皮奶</el-dropdown-item>
+                <el-dropdown-item>蚵仔煎</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </el-dropdown> -->
+              <el-menu mode="horizontal" @select="memberCenter" text-color="#fff" active-text-color="#ffd04b" background-color="#545c64">
+           
+                <el-submenu index="2">
+                  <template slot="title">个人中心</template>
+                  <el-menu-item index="2-1">退出</el-menu-item>                 
+                </el-submenu>
+               
+              </el-menu>
+          </el-col>
         </el-row>
 
       </el-header>
@@ -154,6 +177,10 @@
       },
        handleSelect(key, keyPath) {
         console.log(key, keyPath);
+      },
+      memberCenter(){
+        this.delUser();
+        window.location.href = "./login.html";
       }
     }, 
     created:function(){
