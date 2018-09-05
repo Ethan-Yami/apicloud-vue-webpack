@@ -135,8 +135,7 @@
                   if (ret) {
 
                     if(ret.status==200){
-                       api.alert({ msg: JSON.stringify(ret) });
-             
+                       /*api.alert({ msg: JSON.stringify(ret) });*/             
                       _this.saveUser(ret.data);
                       _this.config.user.id = ret.data.id;
                       _this.config.user.username = ret.data.username;
