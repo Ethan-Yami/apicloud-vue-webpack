@@ -163,6 +163,16 @@
         });
         
       }
+    },
+    beforeCreate:function(){
+      console.log("created钩子");
+      this.getUser();
+      let config = this.config;
+      console.log(JSON.stringify(config));
+      if(config.user.id && config.user.username && config.user.salt){       
+        window.location.href = "./index.html";
+      }
+      //api.alert({ msg: JSON.stringify(user) });
     }
   }
 </script>

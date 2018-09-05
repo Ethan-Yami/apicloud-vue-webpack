@@ -36,7 +36,7 @@
       <el-container>
         <el-aside class='el-menu-side' style="width: auto;">
          
-              <el-menu style="margin-top: 40px;" default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+              <el-menu default-active="1-4-1" class="el-menu-vertical-side" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
 
                 <el-menu-item index="8" @click="handleSide">
                   <i class="el-icon-menu"></i>
@@ -122,7 +122,7 @@
   .el-menu--horizontal{border-bottom: none;}
   .el-menu-top{background-color:#545c64;
   text-color:#fff;active-text-color:#ffd04b; }
-  .el-menu-vertical-demo:not(.el-menu--collapse){width:200px;height: 99%;
+  .el-menu-vertical-side:not(.el-menu--collapse){width:200px;height: 99%;
     min-height: 400px; }
 
 </style>
@@ -155,6 +155,12 @@
        handleSelect(key, keyPath) {
         console.log(key, keyPath);
       }
+    }, 
+    created:function(){
+      console.log("created钩子");
+      this.getUser();
+      let user = this.config;
+      console.log(user);
     }
   };
 </script>
