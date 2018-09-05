@@ -4,7 +4,7 @@
     <el-container>
       <el-header>
 
-        <el-row :gutter="20">
+        <el-row :gutter="20" style="margin-left:0px;margin-right: 0px;">
           <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
           <el-col :span="16" style="  display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;align-items: center;">
 
@@ -147,6 +147,7 @@
   text-color:#fff;active-text-color:#ffd04b; }
   .el-menu-vertical-side:not(.el-menu--collapse){width:200px;height: 99%;
     min-height: 400px; }
+  .el-main{width: 100%;height: 100%;background-color: white;}
 
 </style>
 
