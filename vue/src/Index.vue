@@ -43,7 +43,7 @@
             </el-menu-item>
 
             <el-menu-item index="4" @click='memberCenter'>
-              <i class="el-icon-uspay-poweroff"></i>
+              <i class="el-icon-uspay-paymentmethod-union"></i>
               <span slot="title">退出</span>
             </el-menu-item>
            
