@@ -1,5 +1,48 @@
 <template>
   
+
+    <el-container>
+      <el-header>
+
+        <el-row :gutter="20" style="margin-left:0px;margin-right: 0px;">
+          <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+          <el-col :span="16" style="  display: flex;flex-direction: row;flex-wrap: wrap;justify-content: center;align-items: center;">
+
+              <el-menu :default-active="activeIndex" class="el-menu-top" mode="horizontal" @select="handleSelect"  background-color="#545c64"
+  text-color="#fff"
+  active-text-color="#ffd04b">
+                <el-menu-item index="1">处理中心</el-menu-item>
+                <el-submenu index="2">
+                  <template slot="title">我的工作台</template>
+                  <el-menu-item index="2-1">选项1</el-menu-item>
+                  <el-menu-item index="2-2">选项2</el-menu-item>
+                  <el-menu-item index="2-3">选项3</el-menu-item>
+                  <el-submenu index="2-4">
+                    <template slot="title">选项4</template>
+                    <el-menu-item index="2-4-1">选项1</el-menu-item>
+                    <el-menu-item index="2-4-2">选项2</el-menu-item>
+                    <el-menu-item index="2-4-3">选项3</el-menu-item>
+                  </el-submenu>
+                </el-submenu>
+                <el-menu-item index="3" disabled>消息中心</el-menu-item>
+                <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+              </el-menu>
+
+          </div></el-col>
+          <el-col :span="4">
+
+              <el-menu mode="horizontal" @select="memberCenter" text-color="#fff" active-text-color="#ffd04b" background-color="#545c64">
+           
+                <el-submenu index="2">
+                  <template slot="title">个人中心</template>
+                  <el-menu-item index="2-1">退出</el-menu-item>                 
+                </el-submenu>
+               
+              </el-menu>
+          </el-col>
+        </el-row>
+
+      </el-header>
       <el-container>
         <el-aside class='el-menu-side' style="width: auto;">         
               
@@ -9,11 +52,7 @@
             default-active="2"
             class="el-menu-vertical-side"
             @open="handleOpen"
-            @close="handleClose" :collapse="isCollapse">
-            <el-menu-item index="2" @click="handleSide">
-              <i class="el-icon-menu"></i>
-              <span slot="title">收起菜单</span>
-            </el-menu-item>
+            @close="handleClose">
             <el-submenu index="1">
               <template slot="title">
                 <i class="el-icon-location"></i>
@@ -32,7 +71,10 @@
                 <el-menu-item index="1-4-1">选项1</el-menu-item>
               </el-submenu>
             </el-submenu>
-          
+            <el-menu-item index="2">
+              <i class="el-icon-menu"></i>
+              <span slot="title">导航二</span>
+            </el-menu-item>
             <el-menu-item index="3" disabled>
               <i class="el-icon-document"></i>
               <span slot="title">导航三</span>
@@ -47,6 +89,8 @@
         </el-aside>
         <el-main>Main</el-main>
       </el-container>
+    </el-container>
+
 
 </template>
 <style>
@@ -91,7 +135,6 @@
   .el-menu-vertical-side:not(.el-menu--collapse){width:146px;height: 100%;
     min-height: 400px; }
   .el-main{width: 100%;height: 100%;background-color: white;}
-  .el-menu--collapse{height: 100%;}
 
 </style>
 
@@ -105,7 +148,7 @@
       };
       return {
         tableData: Array(20).fill(item),
-        isCollapse: false,
+        isCollapse: true,
         activeIndex: '1',
         activeIndex2: '1'
       }
