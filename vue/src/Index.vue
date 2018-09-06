@@ -41,6 +41,13 @@
               <i class="el-icon-setting"></i>
               <span slot="title">导航四</span>
             </el-menu-item>
+
+            <el-menu-item index="4" @click='memberCenter'>
+              <i class="el-icon-uspay-poweroff"></i>
+              <span slot="title">退出</span>
+            </el-menu-item>
+           
+
           </el-menu>
 
 
@@ -49,7 +56,9 @@
       </el-container>
 
 </template>
+<style type="text/css" src="./assets/icon/iconfont.css"></style>
 <style>
+
   .el-row {
     margin-bottom: 20px;
     &:last-child {
