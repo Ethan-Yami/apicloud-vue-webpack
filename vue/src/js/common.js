@@ -30,7 +30,7 @@ exports.install = function (Vue, options) {
    		var key = 'user';
 		user = $api.getStorage(key);
 		console.log(user);
-		if(undefined!=user && false!=user ){
+		if(undefined!=user && false!=user){
 			this.config.user.id = user.id;
 			this.config.user.username = user.username;
 			this.config.user.salt = user.salt;

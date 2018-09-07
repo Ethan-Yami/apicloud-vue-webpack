@@ -9,15 +9,16 @@
             @open="handleOpen"
             @close="handleClose" collapse="isCollapse">
             <el-menu-item index="2" @click="handleSide" style="padding-left: 0px;line-height: 28px;">
-             <div style="text-align: center;width: 100%;">               
-                <i class="el-icon-uspay-poweroff" style="font-size:28px;"></i>             
-                <p style="padding: 0px;margin: 0px;">收&nbsp;&nbsp;银</p>
-             </div>
+       
+                <i class="el-icon-uspay-payment el-menu-logo"></i>  
+                <br/>           
+                <em class="el-menu-title">收银</em>
+        
             </el-menu-item>
             <el-submenu index="1">
               <template slot="title">
                 <i class="el-icon-location"></i>
-                <span>导航一</span>
+                <i>导航一</i>
               </template>
               <el-menu-item-group>
                 <template slot="title">分组一</template>
@@ -59,7 +60,7 @@
 
 </template>
 <style type="text/css" src="./assets/icon/iconfont.css"></style>
-<style>
+<style scoped>
 
   .el-row {
     margin-bottom: 20px;
@@ -102,7 +103,9 @@
   .el-menu-vertical-side:not(.el-menu--collapse){width:156px;height: 100%;
     min-height: 400px;line-height:0px;}
   .el-menu--collapse{width: 88px;}
-  .el-menu-item{height: 80px;font-size: 16px;padding-top: 10px;}
+  .el-menu-item{height: 80px;font-size: 16px;padding-top: 10px;text-align: center;}
+  .el-menu-item .el-menu-logo{font-size: 38px;}
+  .el-menu-item .el-menu-title{padding: 0px;margin:0px;font-family: "PingFang SC";font-style: normal;position: relative;right: -6px;}
   .el-menu-item.is-active {
      color: #909399;
   }
