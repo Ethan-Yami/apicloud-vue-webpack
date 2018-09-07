@@ -84,16 +84,17 @@
   .el-menu--horizontal{border-bottom: none;}
   .el-menu-top{background-color:#545c64;
   text-color:#fff;active-text-color:#ffd04b; }
-  .el-menu-vertical-side:not(.el-menu--collapse){width:156px;height: 100%;
+  .el-menu-vertical-side:not(.el-menu--collapse){width:166px;height: 100%;
     min-height: 400px;line-height:0px;}
-  .el-menu--collapse{width: 88px;}
-  .el-menu-item{height: 80px;font-size: 16px;padding-top: 10px;text-align: center; padding-left: 0px;line-height: 28px;}
-  .el-menu-item .el-menu-logo{font-size: 38px;}
+  .el-menu--collapse{width: 126px;}
+  .el-menu-item{height: 96px;font-size: 16px;padding-top: 10px;text-align: center; padding-left: 0px;line-height: 28px;left: -6px;}
+  .el-menu-item .el-menu-logo,i{font-size: 38px; color: #303133;}
+
   .el-menu-item .el-menu-title{padding: 0px;margin:0px;font-family: "PingFang SC";font-style: normal;position: relative;right: -6px;}
+
   .el-menu-item.is-active { color: #303133;}
   .el-main{width: 100%;height: 100%;background-color: white;}
   .el-menu--collapse{height: 100%;}
-
 </style>
 
 <script>
