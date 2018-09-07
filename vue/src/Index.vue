@@ -10,7 +10,7 @@
             @close="handleClose" collapse="isCollapse">
             <el-menu-item index="2" @click="handleSide">
        
-                <i class="el-icon-uspay-payment el-menu-logo"></i>  
+                <i class="el-icon-uspay-wx-pay el-menu-logo"></i>  
                 <br/>           
                 <em class="el-menu-title">收银</em>
         
@@ -28,7 +28,7 @@
              
             </el-menu-item>
 
-            <el-menu-item index="4" @click='memberCenter'>
+            <el-menu-item index="5" @click='memberCenter'>
                  <i class="el-icon-uspay-poweroff el-menu-logo"></i>  
                 <br/>           
                 <em class="el-menu-title">退出</em>              
@@ -84,17 +84,19 @@
   .el-menu--horizontal{border-bottom: none;}
   .el-menu-top{background-color:#545c64;
   text-color:#fff;active-text-color:#ffd04b; }
+  .el-menu-vertical-side{ border-right: solid 1px #272626;}
   .el-menu-vertical-side:not(.el-menu--collapse){width:166px;height: 100%;
     min-height: 400px;line-height:0px;}
-  .el-menu--collapse{width: 126px;}
+  .el-menu--collapse{width: 88px;height: 100%;}
   .el-menu-item{height: 96px;font-size: 16px;padding-top: 10px;text-align: center; padding-left: 0px;line-height: 28px;left: -6px;}
-  .el-menu-item .el-menu-logo,i{font-size: 38px; color: #303133;}
+  .el-menu-item .el-menu-logo,i{font-size: 38px; /*color: #303133;*/}
 
   .el-menu-item .el-menu-title{padding: 0px;margin:0px;font-family: "PingFang SC";font-style: normal;position: relative;right: -6px;}
 
-  .el-menu-item.is-active { color: #303133;}
+  .el-menu-item.is-active { /*color: #303133;*/}
+  .el-menu-item:focus, .el-menu-item:hover {background-color: white;}
   .el-main{width: 100%;height: 100%;background-color: white;}
-  .el-menu--collapse{height: 100%;}
+ 
 </style>
 
 <script>
