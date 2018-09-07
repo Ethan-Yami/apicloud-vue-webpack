@@ -8,46 +8,30 @@
             class="el-menu-vertical-side"
             @open="handleOpen"
             @close="handleClose" collapse="isCollapse">
-            <el-menu-item index="2" @click="handleSide" style="padding-left: 0px;line-height: 28px;">
+            <el-menu-item index="2" @click="handleSide">
        
                 <i class="el-icon-uspay-payment el-menu-logo"></i>  
                 <br/>           
                 <em class="el-menu-title">收银</em>
         
-            </el-menu-item>
-            <el-submenu index="1">
-              <template slot="title">
-                <i class="el-icon-location"></i>
-                <i>导航一</i>
-              </template>
-              <el-menu-item-group>
-                <template slot="title">分组一</template>
-                <el-menu-item index="1-1">选项1</el-menu-item>
-                <el-menu-item index="1-2">选项2</el-menu-item>
-              </el-menu-item-group>
-              <el-menu-item-group title="分组2">
-                <el-menu-item index="1-3">选项3</el-menu-item>
-              </el-menu-item-group>
-              <el-submenu index="1-4">
-                <template slot="title">选项4</template>
-                <el-menu-item index="1-4-1">选项1</el-menu-item>
-              </el-submenu>
-            </el-submenu>
+            </el-menu-item >
           
-            <el-menu-item index="3" disabled>
-              <i class="el-icon-document"></i>
-              <span slot="title">导航三</span>
+            <el-menu-item index="3" style="">
+                <i class="el-icon-uspay-payment el-menu-logo"></i>  
+                <br/>           
+                <em class="el-menu-title">收银</em>
             </el-menu-item>
             <el-menu-item index="4">
-              <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
+               <i class="el-icon-setting el-menu-logo"></i>  
+                <br/>           
+                <em class="el-menu-title">导航四</em>
+             
             </el-menu-item>
 
             <el-menu-item index="4" @click='memberCenter'>
-              <i class="el-icon-uspay-poweroff"></i>
-              <br/>
-
-              <span slot="title">退出</span>
+                 <i class="el-icon-uspay-poweroff el-menu-logo"></i>  
+                <br/>           
+                <em class="el-menu-title">退出</em>              
             </el-menu-item>
            
 
@@ -103,12 +87,10 @@
   .el-menu-vertical-side:not(.el-menu--collapse){width:156px;height: 100%;
     min-height: 400px;line-height:0px;}
   .el-menu--collapse{width: 88px;}
-  .el-menu-item{height: 80px;font-size: 16px;padding-top: 10px;text-align: center;}
+  .el-menu-item{height: 80px;font-size: 16px;padding-top: 10px;text-align: center; padding-left: 0px;line-height: 28px;}
   .el-menu-item .el-menu-logo{font-size: 38px;}
   .el-menu-item .el-menu-title{padding: 0px;margin:0px;font-family: "PingFang SC";font-style: normal;position: relative;right: -6px;}
-  .el-menu-item.is-active {
-     color: #909399;
-  }
+  .el-menu-item.is-active { color: #303133;}
   .el-main{width: 100%;height: 100%;background-color: white;}
   .el-menu--collapse{height: 100%;}
 
