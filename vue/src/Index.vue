@@ -7,7 +7,7 @@
             default-active="2"
             class="el-menu-vertical-side"
             @open="handleOpen"
-            @close="handleClose" collapse="isCollapse">
+            @close="handleClose" :collapse="isCollapse">
             <el-menu-item index="2" @click="handleSide">
        
                 <i class="el-icon-uspay-wx-pay el-menu-logo"></i>  
@@ -89,11 +89,11 @@
     min-height: 400px;line-height:0px;}
   .el-menu--collapse{width: 88px;height: 100%;}
   .el-menu-item{height: 96px;font-size: 16px;padding-top: 10px;text-align: center; padding-left: 0px;line-height: 28px;left: -6px;}
-  .el-menu-item .el-menu-logo,i{font-size: 38px; /*color: #303133;*/}
+  .el-menu-item .el-menu-logo,i{font-size: 38px; color: #303133;}
 
   .el-menu-item .el-menu-title{padding: 0px;margin:0px;font-family: "PingFang SC";font-style: normal;position: relative;right: -6px;}
 
-  .el-menu-item.is-active { /*color: #303133;*/}
+  .el-menu-item.is-active { color: #303133;background-color: white;}
   .el-menu-item:focus, .el-menu-item:hover {background-color: white;}
   .el-main{width: 100%;height: 100%;background-color: white;}
  
@@ -109,7 +109,7 @@
       };
       return {
         tableData: Array(20).fill(item),
-        isCollapse: false,
+        isCollapse: true,
         activeIndex: '1',
         activeIndex2: '1'
       }
