@@ -2,17 +2,17 @@
   
       <el-container>
         <el-aside class='el-menu-side' style="width: auto;">         
-              
-
-
+            
             <el-menu
             default-active="2"
             class="el-menu-vertical-side"
             @open="handleOpen"
-            @close="handleClose" :collapse="isCollapse">
-            <el-menu-item index="2" @click="handleSide">
-              <i class="el-icon-menu"></i>
-              <span slot="title">收起菜单</span>
+            @close="handleClose" collapse="isCollapse">
+            <el-menu-item index="2" @click="handleSide" style="padding-left: 0px;line-height: 28px;">
+             <div style="text-align: center;width: 100%;">               
+                <i class="el-icon-uspay-poweroff" style="font-size:28px;"></i>             
+                <p style="padding: 0px;margin: 0px;">收&nbsp;&nbsp;银</p>
+             </div>
             </el-menu-item>
             <el-submenu index="1">
               <template slot="title">
@@ -43,7 +43,9 @@
             </el-menu-item>
 
             <el-menu-item index="4" @click='memberCenter'>
-              <i class="el-icon-uspay-paymentmethod-union"></i>
+              <i class="el-icon-uspay-poweroff"></i>
+              <br/>
+
               <span slot="title">退出</span>
             </el-menu-item>
            
@@ -97,8 +99,13 @@
   .el-menu--horizontal{border-bottom: none;}
   .el-menu-top{background-color:#545c64;
   text-color:#fff;active-text-color:#ffd04b; }
-  .el-menu-vertical-side:not(.el-menu--collapse){width:146px;height: 100%;
-    min-height: 400px; }
+  .el-menu-vertical-side:not(.el-menu--collapse){width:156px;height: 100%;
+    min-height: 400px;line-height:0px;}
+  .el-menu--collapse{width: 88px;}
+  .el-menu-item{height: 80px;font-size: 16px;padding-top: 10px;}
+  .el-menu-item.is-active {
+     color: #909399;
+  }
   .el-main{width: 100%;height: 100%;background-color: white;}
   .el-menu--collapse{height: 100%;}
 
