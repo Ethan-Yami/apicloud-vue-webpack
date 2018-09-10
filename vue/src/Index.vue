@@ -8,30 +8,28 @@
             class="el-menu-vertical-side"
             @open="handleOpen"
             @close="handleClose" :collapse="isCollapse">
-            <el-menu-item index="2" @click="handleSide">
-       
-                <i class="el-icon-uspay-wx-pay el-menu-logo"></i>  
-                <br/>           
-                <em class="el-menu-title">收银</em>
-        
+            <el-menu-item index="2" @click="handleSide">       
+              <i class="el-icon-uspay-payment el-menu-logo"></i>  
+              <br/>           
+              <em class="el-menu-title">收银</em>        
             </el-menu-item >
           
             <el-menu-item index="3" style="">
-                <i class="el-icon-uspay-payment el-menu-logo"></i>  
-                <br/>           
-                <em class="el-menu-title">收银</em>
+              <i class="el-icon-uspay-payment el-menu-logo"></i>  
+              <br/>           
+              <em class="el-menu-title">收银</em>
             </el-menu-item>
             <el-menu-item index="4">
-               <i class="el-icon-setting el-menu-logo"></i>  
-                <br/>           
-                <em class="el-menu-title">导航四</em>
+              <i class="el-icon-setting el-menu-logo"></i>  
+              <br/>           
+              <em class="el-menu-title">设置</em>
              
             </el-menu-item>
 
             <el-menu-item index="5" @click='memberCenter'>
-                 <i class="el-icon-uspay-poweroff el-menu-logo"></i>  
-                <br/>           
-                <em class="el-menu-title">退出</em>              
+              <i class="el-icon-uspay-poweroff el-menu-logo"></i>  
+              <br/>           
+              <em class="el-menu-title">退出</em>              
             </el-menu-item>
            
 
@@ -70,16 +68,16 @@
     padding: 0;margin:0;
   }
   .el-header {
-     padding: 0px; 
+    padding: 0px; 
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -ms-flex-negative: 0;
     flex-shrink: 0;
     min-height: 64px;
     border-bottom: solid 1px #e6e6e6;
-   background-color:#545c64;
-   text-color:#fff;
-   active-text-color:#ffd04b;
+    background-color:#545c64;
+    text-color:#fff;
+    active-text-color:#ffd04b;
   }
   .el-menu--horizontal{border-bottom: none;}
   .el-menu-top{background-color:#545c64;
@@ -92,7 +90,6 @@
   .el-menu-item .el-menu-logo,i{font-size: 38px; color: #303133;}
 
   .el-menu-item .el-menu-title{padding: 0px;margin:0px;font-family: "PingFang SC";font-style: normal;position: relative;right: -6px;}
-
   .el-menu-item.is-active { color: #303133;background-color: white;}
   .el-menu-item:focus, .el-menu-item:hover {background-color: white;}
   .el-main{width: 100%;height: 100%;background-color: white;}
