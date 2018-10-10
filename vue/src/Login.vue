@@ -63,13 +63,11 @@
   }
 
 </style>
- 
 <script>
 
   export default {
-  
+
     data() {
-     
       var checkAge = (rule, value, callback) => {
         if (!value) {
           return callback(new Error('账号不能为空'));
@@ -105,51 +103,21 @@
       handleSign(formName){
         this.$refs[formName].validate((valid) => {
           if (valid) {
-
-              this.getUser();
-
-              console.log(this.config.user);
-
-              api.showProgress({
-                style: 'default',
-                animationType: 'fade',
-                title: '请稍等...',
-                text: '正在登录...',
-                modal: false
-              });
-            
-
-            var _this = this;         
-                 
-             api.ajax({
-                url: this.config.url+'/api/user/sigin',
+              console.log('23323 submit!!');              
+              api.alert("HRLLO");
+              console.log(this.config);
+              console.log(JSON.stringify(this.config));
+              api.ajax({
+                url: 'http://192.168.1.82/api/index',
                 method: 'post',
                 data: {
                   values:this.accountForm,
                 }
               },function(ret, err) {
-                  api.hideProgress();
-
                   if (ret) {
-
-                    if(ret.status==200){
-                       /*api.alert({ msg: JSON.stringify(ret) });*/             
-                      _this.saveUser(ret.data);
-                      _this.config.user.id = ret.data.id;
-                      _this.config.user.username = ret.data.username;
-                      window.location.href = "./index.html";
-                      /*api.alert({ msg: JSON.stringify( _this.config) });*/
-                    }else{
-                      api.toast({
-                        msg: ret.message,
-                        duration: 2000,
-                        location: 'middle'
-                      });
-                 
-                    }
-                    
-                  }else {
-                    api.alert({ msg: JSON.stringify(err) });
+                      api.alert({ msg: JSON.stringify(ret) });
+                  } else {
+                      api.alert({ msg: JSON.stringify(err) });
                   }
               });
 
@@ -159,19 +127,14 @@
             return false;
           }
         });
-        
+        //alert(JSON.stringify(this.accountForm));
       }
-    },
-    beforeCreate:function(){
+    }, 
+    created:function(){
       console.log("created钩子");
       this.getUser();
-      let config = this.config;
-      console.log(JSON.stringify(config));
-      console.log(JSON.stringify(config.user));
-      if(JSON.stringify(config.user)!='{}' && config.user.id && config.user.username && config.user.salt){       
-        window.location.href = "./index.html";
-      }
-      //api.alert({ msg: JSON.stringify(user) });
+      let user = this.config;
+      console.log(JSON.stringify(user));
     }
   }
 </script>

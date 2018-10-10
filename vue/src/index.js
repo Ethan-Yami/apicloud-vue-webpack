@@ -1,11 +1,8 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import App from './Index.vue';
-import config from './js/common.js';
-/*import api from  "./js/api.js";
-Vue.use(api);*/
-Vue.use(config);
+import App from './Login.vue';
+
 Vue.use(ElementUI);
 
 new Vue({
