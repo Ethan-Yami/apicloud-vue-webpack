@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
 	mode:"production",
-	entry: {		
+	entry: {
 		api:"./vue/src/js/api.js",
 		login:"./vue/src/Login.js",
 		index:"./vue/src/Index.js",
@@ -19,14 +19,14 @@ module.exports = {
 			title:"Login System",
 			filename:"index.html",
 			template:"index.html",
-			chunks:['index','api']	
+			chunks:['index','api']
 		}),
 		new HtmlWebpackPlugin({
 			title:"Login System",
 			filename:"login.html",
 			template:"index.html",
 			chunks:['login','api']
-			
+
 		}),
 		new VueLoaderPlugin()
 	],
@@ -34,15 +34,19 @@ module.exports = {
 	    rules: [
 	      {
 	        test: /\.vue$/,
-	        loader: 'vue-loader',	      
-           
+	        loader: 'vue-loader',
+					options: {
+	          limit: 1000,
+	        }
+
 	      },
 	      // this will apply to both plain `.js` files
 	      // AND `<script>` blocks in `.vue` files
 	      {
 	        test: /\.js$/,
-	        loader: 'babel-loader',	    
-            exclude: '/node_modules/'
+	        loader: 'babel-loader',
+          exclude: '/node_modules/'
+
 	      },
 	      // this will apply to both plain `.css` files
 	      // AND `<style>` blocks in `.vue` files
@@ -53,22 +57,23 @@ module.exports = {
 	          'style-loader',
 	          'css-loader'
 	        ],
-	        exclude:['/node_modules/','/vue/'] 
+	        exclude:['/node_modules/','/vue/']
+
 	      },
-	       
+
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|jpg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,         
+          limit: 1000,
         }
       },
       {
         test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
-        
+          limit: 1000,
+
         }
       }
 	    ]

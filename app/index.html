@@ -56,21 +56,28 @@
 <script type="text/javascript">
     apiready = function(){
 		console.log("Hello APICloud");
-
-
-        //适配iOS 7+，Android 4.4+状态栏
-
+        //api.setScreenOrientation({
+        //    orientation:'auto_landscape'
+        //});
+        var portal = indexFetchCache();
+        console.log(portal);
         var main = $api.byId('main');
         var mainPos = $api.offset(main);
         api.openFrame({
             name: 'main',
-            url: 'html/main.html',
+            url: 'html/'+portal,
             bounces: true,
-
         });
-
-
-
     };
+    function indexFetchCache(){
+      var key = 'user';
+      var user = $api.getStorage(key);
+      console.log('Portal Init user--->'+user);
+      var portal = 'login.html';
+      if(undefined!=user && false!=user){
+        if(false!=user.id && false!=user.username && false!=user.salt) portal = 'index.html';
+      }
+      return  portal;
+    }
 </script>
 </html>

@@ -3,7 +3,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
 
-import App from './Index.vue';
+import App from './Login.vue';
 import config from './js/common.js';
 
 Vue.use(config);

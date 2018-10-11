@@ -1,14 +1,14 @@
 exports.install = function (Vue, options) {
 
     Vue.prototype.config = {
-    	url:"http://192.168.126.139",
+    	url:"http://192.168.0.110",
     	mode:"development",
     	user:{},
     	server:{},
     };
 
     Vue.prototype.checkUser = function(){
-    		
+
 
     };
 
@@ -19,7 +19,7 @@ exports.install = function (Vue, options) {
 		user.email = 'kenny@163.com';*/
 		$api.setStorage(key, user);
 		user = $api.getStorage(key);
-		/*console.log('data--->'+user);*/
+		console.log('data--->'+user);
 		this.config.user.id = user.id;
 		this.config.user.username = user.username;
 		this.config.user.salt = user.salt;
@@ -39,7 +39,7 @@ exports.install = function (Vue, options) {
 
     Vue.prototype.delUser = function(){
    		var key = 'user';
-		$api.rmStorage('user');		
+		$api.rmStorage('user');
     };
-    
+
 };

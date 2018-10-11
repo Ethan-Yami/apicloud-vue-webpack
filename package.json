@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.0.0",
+    "@vue/component-compiler-utils": "^2.2.0",
     "@webassemblyjs/ast": "^1.7.5",
     "@webassemblyjs/floating-point-hex-parser": "^1.7.5",
     "@webassemblyjs/helper-api-error": "^1.7.5",
