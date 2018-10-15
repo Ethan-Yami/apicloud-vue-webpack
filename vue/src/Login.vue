@@ -5,7 +5,7 @@
 
        <div id="inner">
 
-          <el-form :model="accountForm" status-icon :rules="rules" ref="accountForm" label-width="40px" style="padding-top: 66px;">
+          <el-form label-position="top" :model="accountForm" status-icon :rules="rules" ref="accountForm" label-width="40px" style="padding-top: 66px;">
 
           <el-form-item label="账号" prop="account">
             <el-input type="text" v-model.number="accountForm.account" auto-complete="off"></el-input>
@@ -61,7 +61,25 @@
     min-height: 338px;
 
   }
-
+  .el-form-item {
+    margin-bottom: 18px;
+  }
+  .el-form--label-top .el-form-item__label {
+      float: none;
+      display: inline-block;
+      text-align: left;
+      padding: 0px 0px;
+  }
+  .el-form-item__label {
+    text-align: right;
+    float: left;
+    font-size: 14px;
+    color: #606266;
+    line-height: 28px;
+    padding: 0 12px 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
 </style>
 
 <script>
@@ -129,7 +147,7 @@
                 }
               },function(ret, err) {
                   api.hideProgress();
-
+                  console.log(JSON.stringify(ret));
                   if (ret) {
 
                     if(ret.status==200){

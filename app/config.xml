@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="A0000000000001"  version="0.0.1">
-    <name>helloApp</name>
+<widget id="A0000000000002"  version="0.0.1">
+    <name>Test Back</name>
     <description>
         Example For APICloud.
     </description>
     <author email="developer@apicloud.com" href="http://www.apicloud.com">
         Developer
     </author>
-    <content src="./html/index.html" />
+    <content src="./index.html" />
     <access origin="*" />
     <preference name="pageBounce" value="false"/>
 	<preference name="appBackground" value="rgba(0,0,0,0.0)"/>
