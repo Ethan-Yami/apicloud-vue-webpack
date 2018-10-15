@@ -5,7 +5,7 @@
 
        <div id="inner">
 
-          <el-form label-position="top" :model="accountForm" status-icon :rules="rules" ref="accountForm" label-width="60px" style="padding-top: 20px;margin:8px 20px;">
+          <el-form label-position="top" :model="accountForm" status-icon :rules="rules" ref="accountForm" label-width="60px" style="padding-top: 10px;margin:8px 20px;">
 
           <el-form-item label="账号" prop="account">
             <el-input type="text" v-model.number="accountForm.account" auto-complete="off"></el-input>
@@ -63,7 +63,7 @@
     border: 1px solid rgba(0,0,0,.4);
     min-width: 320px;
     min-height: 338px;
-
+    height: 368px;
   }
   .el-form-item {
     margin-bottom: 18px;
