@@ -5,7 +5,7 @@
 
        <div id="inner">
 
-          <el-form label-position="top" :model="accountForm" status-icon :rules="rules" ref="accountForm" label-width="40px" style="padding-top: 66px;">
+          <el-form label-position="top" :model="accountForm" status-icon :rules="rules" ref="accountForm" label-width="60px" style="padding-top: 20px;margin:8px 20px;">
 
           <el-form-item label="账号" prop="account">
             <el-input type="text" v-model.number="accountForm.account" auto-complete="off"></el-input>
@@ -13,7 +13,11 @@
           <el-form-item label="密码" prop="password">
             <el-input type="password" v-model="accountForm.password" auto-complete="off"></el-input>
           </el-form-item>
-          <el-form-item >
+          <el-form-item v-show="accountForm.permission=='employee'" label="商户号" prop="merchant">
+            <el-input type="number" v-model="accountForm.merchant" auto-complete="off"></el-input>
+          </el-form-item>
+
+          <el-form-item>
             <el-radio-group v-model="accountForm.permission" size="medium">
               <el-radio border label="root">管理员</el-radio>
               <el-radio border label="employee">员工</el-radio>
